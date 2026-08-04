@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="se-cli test pages — reference HTML pages for navigation, forms, storage, tabs, iframes, and Shadow DOM, used by the integration test suite." />
+  <meta name="theme-color" content="#22C55E" />
+  <title>Test Pages — se-cli</title>
+  <style>
+    :root { --green: #22c55e; --green-dark: #16a34a; --text: #1f2937; --muted: #6b7280; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color: var(--text); background: #f9fafb; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.25rem; }
+    header.page-header { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); padding: 2.5rem 0; border-bottom: 1px solid #e5e7eb; }
+    header.page-header h1 { margin: 0 0 0.5rem; font-size: 2rem; font-weight: 800; color: #14532d; }
+    header.page-header p { margin: 0; color: #166534; max-width: 720px; }
+    header.page-header code { background: rgba(255,255,255,.8); padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+    .section { padding: 2.5rem 0; }
+    .env-note { background: #ecfdf5; border: 1px solid #a7f3d0; border-left: 4px solid var(--green); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 2rem; }
+    .env-note code { background: #fff; padding: .1rem .35rem; border-radius: 4px; }
+    .testpage-group { margin-bottom: 2rem; }
+    .testpage-group h3 { font-size: 1.1rem; font-weight: 700; margin: 0 0 0.75rem; color: #374151; }
+    .testpage-list { list-style: none; margin: 0; padding: 0; }
+    .testpage-item { display: flex; justify-content: space-between; align-items: center; gap: 1rem; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.85rem 1.1rem; margin-bottom: 0.6rem; }
+    .testpage-item:hover { border-color: var(--green); }
+    .testpage-name { font-weight: 600; color: var(--green-dark); text-decoration: none; }
+    .testpage-name:hover { text-decoration: underline; }
+    .testpage-desc { font-size: 0.9rem; color: var(--muted); margin-top: 0.15rem; }
+    .testpage-desc code { background: #f3f4f6; padding: .05rem .3rem; border-radius: 4px; font-size: .85em; }
+    .testpage-cmd code { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8rem; background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 4px; white-space: nowrap; }
+    .alert-info { background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 1rem 1.25rem; margin-top: 2rem; font-size: 0.95rem; }
+    footer { border-top: 1px solid #e5e7eb; padding: 1.5rem 0; color: var(--muted); font-size: 0.9rem; background: #fff; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+    footer a { color: var(--muted); text-decoration: none; margin-left: 1rem; }
+    footer a:hover { color: var(--green-dark); }
+    @media (max-width: 640px) { .testpage-item { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <header class="page-header">
+    <div class="container">
+      <h1>Test Pages</h1>
+      <p>Reference HTML pages used by the se-cli integration suite and browsable here for inspection. Each page is a standalone light-themed HTML file that resembles real-world pages you'd automate.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="env-note">
+        <strong>Quick start.</strong> Serve the <code>site/</code> folder locally via <code>python3 -m http.server 8000 --directory site</code>, then drive a page with se-cli:
+        <div style="margin-top: 0.5rem;"><code>se-cli open http://localhost:8000/test-pages/forms.html</code></div>
+      </div>
+
+      <div class="testpage-group">
+        <h3>📝 Basics &amp; Apps</h3>
+        <ul class="testpage-list">
+          <li class="testpage-item"><div><a class="testpage-name" href="example.html">Example Page</a><div class="testpage-desc">A minimal page with one heading and one link — the canonical "first snapshot" target.</div></div><div class="testpage-cmd"><code>test-pages/example.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="todo.html">Todo App</a><div class="testpage-desc">Interactive todo application — the full add / check / clear flow used in the acceptance criteria.</div></div><div class="testpage-cmd"><code>test-pages/todo.html</code></div></li>
+        </ul>
+      </div>
+
+      <div class="testpage-group">
+        <h3>✍️ Forms &amp; Interaction</h3>
+        <ul class="testpage-list">
+          <li class="testpage-item"><div><a class="testpage-name" href="forms.html">Form Elements</a><div class="testpage-desc">Inputs, selects, checkboxes, and radios — exercises <code>fill</code>, <code>select</code>, <code>check</code>, <code>uncheck</code>.</div></div><div class="testpage-cmd"><code>test-pages/forms.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="buttons.html">Button Test Page</a><div class="testpage-desc">Buttons with click handlers — exercises <code>click</code>, <code>dblclick</code>, and hover state changes.</div></div><div class="testpage-cmd"><code>test-pages/buttons.html</code></div></li>
+        </ul>
+      </div>
+
+      <div class="testpage-group">
+        <h3>🧭 Navigation &amp; Tabs</h3>
+        <ul class="testpage-list">
+          <li class="testpage-item"><div><a class="testpage-name" href="links.html">Navigation Links</a><div class="testpage-desc">Links for testing <code>goto</code>, <code>go-back</code>, <code>go-forward</code>, and <code>reload</code>.</div></div><div class="testpage-cmd"><code>test-pages/links.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="tabs.html">Tabs Test Page</a><div class="testpage-desc">Links that open new tabs/windows — exercises <code>tab-list</code>, <code>tab-new</code>, <code>tab-select</code>, <code>tab-close</code>.</div></div><div class="testpage-cmd"><code>test-pages/tabs.html</code></div></li>
+        </ul>
+      </div>
+
+      <div class="testpage-group">
+        <h3>🎯 Snapshot &amp; Structure</h3>
+        <ul class="testpage-list">
+          <li class="testpage-item"><div><a class="testpage-name" href="snapshot.html">Snapshot Test Page</a><div class="testpage-desc">Rich ARIA structure — nav, tabs, menu, tree, table, alerts — for <code>snapshot</code> and <code>find</code> testing.</div></div><div class="testpage-cmd"><code>test-pages/snapshot.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="iframe.html">IFrame Test Page</a><div class="testpage-desc">Same-origin and cross-origin iframes — exercises recursive snapshot with cross-frame refs (<code>f3e15</code>).</div></div><div class="testpage-cmd"><code>test-pages/iframe.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="shadow-dom.html">Shadow DOM Test Page</a><div class="testpage-desc">Open shadow roots with interactive elements — exercises Shadow DOM traversal and ref assignment.</div></div><div class="testpage-cmd"><code>test-pages/shadow-dom.html</code></div></li>
+        </ul>
+      </div>
+
+      <div class="testpage-group">
+        <h3>💾 Storage</h3>
+        <ul class="testpage-list">
+          <li class="testpage-item"><div><a class="testpage-name" href="storage.html">Storage Test Page</a><div class="testpage-desc">localStorage and sessionStorage entries — exercises <code>localstorage-*</code>, <code>sessionstorage-*</code>, and <code>state-save</code>/<code>load</code>.</div></div><div class="testpage-cmd"><code>test-pages/storage.html</code></div></li>
+        </ul>
+      </div>
+
+      <div class="testpage-group">
+        <h3>🧪 Testing &amp; Assertions</h3>
+        <ul class="testpage-list">
+          <li class="testpage-item"><div><a class="testpage-name" href="wait.html">Wait &amp; Retry Test Page</a><div class="testpage-desc">Delayed visibility, dynamic elements, and flaky buttons — exercises <code>--wait</code>, <code>--timeout</code>, and <code>--retry</code> flags.</div></div><div class="testpage-cmd"><code>test-pages/wait.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="assertions.html">Assertions Test Page</a><div class="testpage-desc">Visibility, state, text, value, count, attribute, and dynamic elements — exercises <code>expect</code> assertions (v0.6).</div></div><div class="testpage-cmd"><code>test-pages/assertions.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="interactions.html">Interactions Test Page</a><div class="testpage-desc">Hover, drag, dialogs, upload, and resize targets — exercises v0.5 interaction commands.</div></div><div class="testpage-cmd"><code>test-pages/interactions.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="network-debug.html">Network Debug Test Page</a><div class="testpage-desc">Console logs, network requests, and route mocking — exercises <code>highlight</code>, <code>console</code>, <code>requests</code>, <code>route</code> commands (v0.7).</div></div><div class="testpage-cmd"><code>test-pages/network-debug.html</code></div></li>
+          <li class="testpage-item"><div><a class="testpage-name" href="emulation.html">Emulation Probe</a><div class="testpage-desc">Reports viewport, user agent, color scheme, timezone, locale, and touch — exercises <code>device</code>, <code>emulate</code>, and open-time emulation flags (v0.8).</div></div><div class="testpage-cmd"><code>test-pages/emulation.html</code></div></li>
+        </ul>
+      </div>
+
+      <div class="alert-info">Each test page is a standalone light-themed HTML file with its own inline styles — they intentionally differ from the documentation site so they resemble real-world pages you'd automate. The integration suite drives them with se-cli itself (dogfooding).</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <span>Apache-2.0 · se-cli</span>
+      <span><a href="/se-site/">Home</a><a href="/se-site/docs/getting-started">Docs</a><a href="https://github.com/se-cli/se-cli">GitHub</a></span>
+    </div>
+  </footer>
+</body>
+</html>

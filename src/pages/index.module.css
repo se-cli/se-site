@@ -1,0 +1,315 @@
+.hero {
+  text-align: center;
+  padding: 5rem 1rem 4rem;
+}
+
+.heroTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.heroAccent {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  opacity: 0.85;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.installCode {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+[data-theme='dark'] .installCode {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Why section */
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 920px;
+  margin: 2rem auto 0;
+}
+
+.whyCard {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.whyLabel {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.whyLabelRed {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.whyLabelGreen {
+  color: #166534;
+  background: #dcfce7;
+}
+
+/* Token compare */
+.tokenBars {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.tokenGroup {
+  margin-bottom: 1rem;
+}
+
+.tokenLabel {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.tokenValue {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.tokenTrack {
+  height: 28px;
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.tokenFill {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  white-space: nowrap;
+}
+
+.tokenStats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.tokenStat {
+  text-align: center;
+}
+
+.statNumGreen {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #16a34a;
+}
+
+.statNumRed {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #dc2626;
+}
+
+/* Features */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.featureCard {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.featureIcon {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.featureCard h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.featureCard p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* Quick start */
+.qsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.qsStep {
+  background: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.qsNum {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.qsStep h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.qsCode {
+  background: var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 0.9rem;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  margin: 0;
+}
+
+/* Ecosystem */
+.ecoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ecoCard {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ecoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.ecoLogo {
+  width: 40px;
+  height: 40px;
+}
+
+.ecoBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #22c55e;
+  color: #fff;
+}
+
+.ecoCard h3 {
+  font-size: 1.1rem;
+}
+
+.ecoCard p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  flex-grow: 1;
+}
+
+.ecoInstall {
+  display: block;
+  background: var(--ifm-color-emphasis-200);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.ecoLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ecoLink {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* CTA */
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.sectionAlt {
+  background: var(--ifm-color-emphasis-0);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
+}

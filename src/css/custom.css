@@ -1,0 +1,93 @@
+/**
+ * se-cli brand theme — green (#22C55E) Infima overrides.
+ * Brand palette follows the original static site: green-500 #22C55E.
+ */
+
+:root {
+  --ifm-color-primary: #22c55e;
+  --ifm-color-primary-dark: #1fb454;
+  --ifm-color-primary-darker: #1daa4f;
+  --ifm-color-primary-darkest: #188c41;
+  --ifm-color-primary-light: #33cc6c;
+  --ifm-color-primary-lighter: #3fd075;
+  --ifm-color-primary-lightest: #62da90;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(34, 197, 94, 0.12);
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto,
+    sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', ui-monospace, SFMono-Regular,
+    Menlo, Consolas, monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-link-color: #16a34a;
+  --ifm-link-hover-color: #15803d;
+}
+
+/* Dark mode — softer green for contrast */
+[data-theme='dark'] {
+  --ifm-color-primary: #4ade80;
+  --ifm-color-primary-dark: #3dd072;
+  --ifm-color-primary-darker: #34c868;
+  --ifm-color-primary-darkest: #28a954;
+  --ifm-color-primary-light: #62e293;
+  --ifm-color-primary-lighter: #78e6a2;
+  --ifm-color-primary-lightest: #93ebb5;
+  --ifm-link-color: #4ade80;
+  --ifm-link-hover-color: #6fe2a0;
+  --docusaurus-highlighted-code-line-bg: rgba(74, 222, 128, 0.15);
+}
+
+/* GitHub header link (octocat icon) */
+.header-github-link::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: flex;
+  background-color: var(--ifm-font-color-base);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.header-github-link:hover {
+  opacity: 0.7;
+}
+
+/* Hero section on the landing page */
+.hero--green {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  color: #14532d;
+}
+[data-theme='dark'] .hero--green {
+  background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
+  color: #dcfce7;
+}
+
+/* Small polish: code blocks */
+.theme-code-block {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* Docs page container width */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Landing page section helpers */
+.section {
+  padding: 3.5rem 0;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+.section-lead {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  opacity: 0.85;
+  font-size: 1.05rem;
+}
