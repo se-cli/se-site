@@ -42,7 +42,7 @@ await new Select(el)
   .selectByVisibleText("monthly");
 ```
 
-## generate-locator (Planned · v0.9)
+## generate-locator (Shipped · v0.9)
 
 The planned `generate-locator` command (v0.9) produces the best available locator expression for a ref, preferring `By.role()` and falling back to `By.css()` or `By.xpath()`. This pairs with role-based code generation to emit production-grade locators instead of the internal `data-se-ref` selector.
 
@@ -56,14 +56,14 @@ $ se-cli generate-locator e5
 
 ## By.role() vs By.css()
 
-se-cli's default codegen emits `By.css('[data-se-ref="eN"]')` because that attribute is guaranteed present after a snapshot. v0.9 adds role-based codegen that emits `By.role(...)` for more resilient tests. The comparison below covers the tradeoffs.
+se-cli's default codegen emits `By.css('[data-se-ref="eN"]')` because that attribute is guaranteed present after a snapshot. v0.9 shipped role-based codegen that emits `By.role(...)` for more resilient tests. The comparison below covers the tradeoffs.
 
 | Aspect | By.role() | By.css() |
 |--------|-----------|----------|
 | Resilience | Survives DOM/class changes | Breaks on refactor |
 | Readability | High — intent is explicit | Low — implementation detail |
 | Snapshot parity | Mirrors the aria tree directly | Decoupled from roles |
-| Availability | v0.9 (role-based codegen) | v0.1 (default) |
+| Availability | v0.9 (shipped) | v0.1 (default) |
 | Edge IE mode | Disabled — keep By.css/By.xpath | Supported |
 
 ## Migrating into Vitest / Jest

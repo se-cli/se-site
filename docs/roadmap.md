@@ -91,9 +91,9 @@ The Selenium moat. Real Safari via `safaridriver`, Selenium Grid 4 (`--endpoint`
 
 `record` mode that emits a complete test file, multi-framework test code export (`export --format=pytest|junit5|mocha`), built-in test report generation (`--report=junit|allure|html`), simplified tracing, video capture (CDP or ffmpeg), video chapters, and a `show` dashboard for multi-session monitoring and page annotation.
 
-### v0.12 — VSCode Extension `Marginal` planned
+### v0.12 — VSCode Extension `Marginal` partially delivered
 
-A separate repo ([`se-extension-vscode`](https://github.com/se-cli/se-extension-vscode)): MCP Server registration, snapshot/screenshot Webview, status bar, and configuration settings. Following the `playwright-vscode` pattern.
+A separate repo ([`se-extension-vscode`](https://github.com/se-cli/se-extension-vscode)): MCP Server registration, snapshot/screenshot Webview, status bar, and configuration settings. Following the `playwright-vscode` pattern. Initial implementation delivered; Task Provider, `attach --extension`, and marketplace publishing remain.
 
 ### v0.13 — BiDi Expansion & Hardening `Core` planned
 

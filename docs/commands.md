@@ -19,6 +19,7 @@ se-cli ships with commands grouped into nine categories. Session-level commands 
 | `close-all` | Close all sessions gracefully |
 | `kill-all` | Force-kill all sessions |
 | `logs [--tail=N]` | Tail this session's daemon + CLI log files (default 50 lines) |
+| `mcp-server [--http] [--port=N]` | Start the MCP server (stdio default; Streamable HTTP with `--http`) (v0.9) |
 
 ## Navigation
 
@@ -86,24 +87,25 @@ se-cli ships with commands grouped into nine categories. Session-level commands 
 |---------|-------------|
 | `cookie-list` | List all cookies for the current page |
 | `cookie-get <name>` | Get a single cookie by name |
-| `cookie-set <json>` | Add or overwrite a cookie |
-| `cookie-delete <name>` | Delete a cookie by name |
+| `cookie-set <name> <value>` | Add or overwrite a cookie |
+| `cookie-delete [name]` | Delete a cookie by name (omit to delete all) |
 | `localstorage-get <key>` | Read a localStorage value |
 | `localstorage-set <key> <val>` | Write a localStorage value |
 | `localstorage-delete <key>` | Delete a localStorage value |
-| `localstorage-clear` | Clear all localStorage |
-| `sessionstorage-*` | Same family for sessionStorage |
-| `state-save <file>` | Export cookies + storage to JSON |
-| `state-load <file>` | Restore cookies + storage from JSON |
+| `localstorage-delete` | Clear all localStorage (omit key) |
+| `sessionstorage-get/set/delete/list` | Same family for sessionStorage |
+| `sessionstorage-delete` | Clear all sessionStorage (omit key) |
+| `state-save [--filename=f]` | Export cookies + storage to JSON |
+| `state-load [--filename=f]` | Restore cookies + storage from JSON |
 
 ## Tabs
 
 | Command | Description |
 |---------|-------------|
 | `tab-list` | List all open tabs/windows in the session |
-| `tab-new <url>` | Open a new tab and navigate to URL |
+| `tab-new [url]` | Open a new tab, optionally navigate to URL |
 | `tab-close` | Close the current tab |
-| `tab-select <handle>` | Switch to a tab by window handle |
+| `tab-select <index>` | Switch to a tab by 0-based index |
 
 ## Config
 
@@ -193,7 +195,7 @@ se-cli ships with commands grouped into nine categories. Session-level commands 
 | `--raw` | Output only the result value (for scripting) |
 | `--json` | Structured JSON output |
 | `-s=<name>` | Use named session |
-| `--browser=chrome\|edge\|firefox` | Browser selection (default: chrome) |
+| `--browser=chrome\|edge\|firefox` | Browser selection (default: auto-detect Edge → Chrome → Firefox) |
 | `--headed` | Show browser window (default: headless) |
 | `--cdp=<url>` | Attach to running Chrome via CDP |
 | `--profile=<path>` | Persistent user data directory (v0.2) |

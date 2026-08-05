@@ -58,7 +58,7 @@ Every capability mapped against the five supported browser targets. Filter by br
 | MCP server (stdio / HTTP) | v0.9 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | run-code / generate-locator | v0.9 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | `By.role()` codegen | v0.9 | ✓ | ✓ | ✓ | ✓ | ✓ |
-| install --skills | v0.2 | ✓ | ✓ | ✓ | ✓ | ✓ |
+| install --skills (multi-target) | v0.9 | ✓ | ✓ | ✓ | ✓ | ✓ |
 | **Remote & Browsers (v0.10)** | | | | | | |
 | Safari (`safaridriver`) | v0.10 | — | — | — | ○ | — |
 | Selenium Grid (`--endpoint`) | v0.10 | ○ | ○ | ○ | ○ | ○ |

@@ -13,7 +13,7 @@ Cookie commands operate on the cookies for the current page's domain. `cookie-se
 |---------|-------------|
 | `cookie-list` | List all cookies for the current page |
 | `cookie-get <name>` | Get a single cookie by name (returns JSON) |
-| `cookie-set <json>` | Add or overwrite a cookie, e.g. `'{"name":"token","value":"abc"}'` |
+| `cookie-set <name> <value>` | Add or overwrite a cookie, e.g. `'{"name":"token","value":"abc"}'` |
 | `cookie-delete <name>` | Delete a cookie by name |
 
 ```bash
@@ -32,7 +32,7 @@ The storage families mirror each other — replace `localstorage` with `sessions
 | `localstorage-get <key>` | Read a value |
 | `localstorage-set <key> <val>` | Write a value |
 | `localstorage-delete <key>` | Delete a value |
-| `localstorage-clear` | Clear all localStorage |
+| `localstorage-delete` | Clear all localStorage |
 | `sessionstorage-get/set/delete/clear` | Same operations for sessionStorage |
 
 ```bash
@@ -41,7 +41,7 @@ se-cli localstorage-get theme
 # dark
 
 se-cli sessionstorage-set flash "welcome"
-se-cli localstorage-clear
+se-cli localstorage-delete
 ```
 
 ## State save & load

@@ -59,9 +59,9 @@ For a coding agent that already runs shell commands, the CLI path is dramaticall
 | Persistent server | Yes | No (daemon holds state) |
 | Best for | Autonomous long-running workflows | Coding agents (Claude Code, Cursor) |
 
-## MCP Server (Shipped · v0.7.1)
+## MCP Server (Shipped · v0.9)
 
-se-cli ships as an MCP Server via `@modelcontextprotocol/sdk`, dual-tracking the CLI: both share the same underlying tool implementation. This covers autonomous agents that prefer a persistent tool server over shell commands.
+se-cli ships as an MCP Server (custom JSON-RPC 2.0, no SDK dependency), dual-tracking the CLI: both share the same underlying tool implementation. This covers autonomous agents that prefer a persistent tool server over shell commands.
 
 ```text
 # stdio transport (default) — local agent

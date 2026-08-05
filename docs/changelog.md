@@ -134,9 +134,9 @@ High implementation complexity but significant differentiation potential. Schedu
 - `video-start` / `video-stop` / `video-chapter <title>`: CDP or ffmpeg frame capture.
 - `show` dashboard for multi-session monitoring; `show --annotate` for design feedback.
 
-## v0.12 — VSCode Extension `Marginal` planned
+## v0.12 — VSCode Extension `Marginal` partially delivered
 
-*planned · separate GitHub repo*
+*2026-08 · separate GitHub repo — initial implementation delivered*
 
 A separate repo ([`se-extension-vscode`](https://github.com/se-cli/se-extension-vscode)) that depends on se-cli CLI being globally installed. Initial implementation includes MCP registration, commands, webview, and status bar.
 
