@@ -51,7 +51,7 @@ const features = [
   {
     icon: '🧪',
     title: 'Tested & CI-ready',
-    desc: '100+ unit tests and 30+ integration tests. GitHub Actions matrix across OS and browsers. npm publish on release.',
+    desc: '1,100+ unit tests and 250+ integration tests. GitHub Actions matrix across OS and browsers. npm publish on release.',
   },
 ];
 
@@ -77,7 +77,7 @@ se-cli snapshot
 
 ### Ran Selenium code
 await driver.findElement(
-  By.css('[data-se-ref="e1"]')
+  new By('role', { role: 'link', name: 'More information...' })
 ).click();
 
 se-cli close`,
@@ -103,7 +103,7 @@ const ecosystem = [
     name: 'se-mcp',
     version: 'npm',
     badge: 'npm',
-    desc: 'Thin MCP server wrapper. Exposes 50+ browser automation tools to VS Code, Claude Desktop, Cursor, and any MCP-aware client via stdio.',
+    desc: 'Thin MCP server wrapper. Exposes all 62 browser automation tools to VS Code, Claude Desktop, Cursor, and any MCP-aware client via stdio.',
     install: 'npx @browsers-cli/se-mcp',
     links: [
       {label: 'GitHub', href: 'https://github.com/se-cli/se-mcp'},

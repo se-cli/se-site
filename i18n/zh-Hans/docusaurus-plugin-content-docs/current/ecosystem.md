@@ -13,7 +13,7 @@ se-cli 生态遵循 Playwright 的多仓库模式。三个相互独立的仓库�
 
 ### 什么是 se-mcp？
 
-se-mcp 是围绕 se-cli 的轻量 MCP（Model Context Protocol）服务器包装器。它通过 stdio JSON-RPC 2.0 向支持 MCP 的 AI 客户端（如 VS Code、Claude Desktop、Cursor 和 Claude Code）暴露 50 多个浏览器自动化工具。
+se-mcp 是围绕 se-cli 的轻量 MCP（Model Context Protocol）服务器包装器。它通过 stdio JSON-RPC 2.0 向支持 MCP 的 AI 客户端（如 VS Code、Claude Desktop、Cursor 和 Claude Code）暴露全部 62 个浏览器自动化工具。
 
 - 包：npm 上的 `@browsers-cli/se-mcp`
 - 仓库：[https://github.com/se-cli/se-mcp](https://github.com/se-cli/se-mcp)
@@ -71,7 +71,7 @@ npx @browsers-cli/se-mcp
 
 ### 工具目录
 
-se-mcp 暴露 50 多个 MCP 工具，覆盖完整的浏览器自动化生命周期。所有工具均以 `browser_` 为前缀。
+se-mcp 暴露 62 个 MCP 工具，覆盖完整的浏览器自动化生命周期。所有工具均以 `browser_` 为前缀。
 
 | 工具 | 描述 |
 |------|------|
@@ -113,7 +113,7 @@ code --install-extension se-cli.se-extension-vscode
 
 ### 功能
 
-- **MCP 服务器集成** —— se-cli 通过 `contributes.mcpServers` 注册为 Model Context Protocol 服务器，向 VS Code 智能体暴露 40 多个浏览器自动化工具。
+- **MCP 服务器集成** —— se-cli 通过 `contributes.mcpServers` 注册为 Model Context Protocol 服务器，向 VS Code 智能体暴露全部 62 个浏览器自动化工具。
 - **浏览器面板** —— 活动栏中的 webview，以树形展示最近一次 aria 快照、最近一次截图、快捷操作按钮（打开、关闭、导航、快照、截图、点击、填写）以及命令历史。
 - **状态栏** —— 实时显示 daemon 状态（浏览器运行中 / 已停止）。点击可打开包含所有命令的快速选择器。
 - **自动快照** —— 可选地在每次导航或交互后自动获取 aria 快照，使面板始终反映当前页面。

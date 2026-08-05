@@ -105,7 +105,7 @@ sidebar_position: 3
 
 将 se-cli 作为 MCP 服务器暴露。双轨制：CLI+SKILLS（面向编码智能体，令牌高效）和 MCP 服务器（面向自主工作流，持久状态）——两者共享同一套底层工具实现。MCP 服务器包装包发布为 [`se-mcp`](https://github.com/se-cli/se-mcp)。
 
-- `se-cli mcp-server`：基于自定义 JSON-RPC 的 40+ 工具（无 SDK 依赖）；stdio（默认）和 Streamable HTTP（`--http`、`POST|GET|DELETE /mcp`、`Mcp-Session-Id`）。
+- `se-cli mcp-server`：基于自定义 JSON-RPC 的 62 个工具（无 SDK 依赖）；stdio（默认）和 Streamable HTTP（`--http`、`POST|GET|DELETE /mcp`、`Mcp-Session-Id`）。
 - `run-code "async driver => ..."`：执行任意 Selenium 代码片段；返回的元素会成为 ref。
 - `generate-locator <ref>`：最佳定位器（`new By('role', …)`/`By.css`）并带匹配数量；通过 `--locator-style=role|css|ref` 进行基于角色的代码生成。
 - `SKILL.md` front matter 合规（`name`、`description`、`license`、`compatibility`）和多目标 `install --skills`（自动检测、`--agent`、`--path`、`--force`、`--list-agents`）。

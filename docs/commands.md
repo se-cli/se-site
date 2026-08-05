@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Command Reference
 
-se-cli ships with commands grouped into nine categories. Session-level commands run in the CLI process; the rest are forwarded to the daemon. Pick a tab to browse each group.
+se-cli ships with commands grouped into categories by concern. Session-level commands run in the CLI process; the rest are forwarded to the daemon. Pick a tab to browse each group.
 
 ## Session
 
@@ -19,6 +19,8 @@ se-cli ships with commands grouped into nine categories. Session-level commands 
 | `close-all` | Close all sessions gracefully |
 | `kill-all` | Force-kill all sessions |
 | `logs [--tail=N]` | Tail this session's daemon + CLI log files (default 50 lines) |
+| `install [--skills] [--agent=claude,cursor,copilot] [--path=<dir>] [--force] [--list-agents]` | Install `SKILL.md` into AI agent skill directories (v0.2; multi-target v0.9) |
+| `install-browser [chrome\|edge\|firefox]` | Install/verify the browser driver via Selenium Manager (auto-detects if omitted) (v0.1) |
 | `mcp-server [--http] [--port=N]` | Start the MCP server (stdio default; Streamable HTTP with `--http`) (v0.9) |
 
 ## Navigation
@@ -209,7 +211,7 @@ se-cli ships with commands grouped into nine categories. Session-level commands 
 | `--retry=<n>` | Failure retry count, `-1` = until timeout (v0.4) |
 | `--retry-interval=<ms>` | Polling interval for retries (v0.4, default 100) |
 | `--implicit-wait=<ms>` | Driver implicit wait (v0.4) |
-| `--page-load-timeout=<ms>` | `driver.manage().timeouts().pageLoadTimeout()` (v0.4) |
+| `--page-load-timeout=<ms>` | `driver.manage().setTimeouts({ pageLoad: <ms> })` (v0.4) |
 | `--script-timeout=<ms>` | `setScriptTimeout` for async `eval` (v0.4) |
 | `--no-wait` | Shorthand for `--wait=none --timeout=0` (v0.4) |
 | `--not` | Invert assertion (v0.6) |
@@ -246,7 +248,7 @@ Every command returns a response with up to four sections: `Page`, `Snapshot`, `
 - e2 [link "Learn more"]
 
 ### Ran Selenium code
-await driver.findElement(By.css('[data-se-ref="e2"]')).click();
+await driver.findElement(new By('role', { role: 'button', name: 'Save Draft' })).click();
 
 ### Result
 clicked

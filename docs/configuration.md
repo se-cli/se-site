@@ -32,7 +32,7 @@ Priority (high → low)
 | `--retry=<n>` | Failure retry count (`-1` = until timeout) | 0 |
 | `--retry-interval=<ms>` | Polling interval | 100 |
 | `--implicit-wait=<ms>` | Driver implicit wait (discouraged but compatible) | 0 |
-| `--page-load-timeout=<ms>` | `driver.manage().timeouts().pageLoadTimeout()` | 30000 |
+| `--page-load-timeout=<ms>` | `driver.manage().setTimeouts({ pageLoad })` | 30000 |
 | `--script-timeout=<ms>` | `setScriptTimeout` (affects async `eval`) | 30000 |
 | `--no-wait` | Shorthand for `--wait=none --timeout=0` (precise-timing scenarios) | — |
 

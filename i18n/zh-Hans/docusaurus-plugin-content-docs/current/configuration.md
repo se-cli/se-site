@@ -32,7 +32,7 @@ v0.4 版本将 Selenium 的隐式/显式等待、pageLoad/script 超时和 `Expe
 | `--retry=<n>` | 失败重试次数（`-1` = 直到超时） | 0 |
 | `--retry-interval=<ms>` | 轮询间隔 | 100 |
 | `--implicit-wait=<ms>` | 驱动隐式等待（不推荐但兼容） | 0 |
-| `--page-load-timeout=<ms>` | `driver.manage().timeouts().pageLoadTimeout()` | 30000 |
+| `--page-load-timeout=<ms>` | `driver.manage().setTimeouts({ pageLoad })` | 30000 |
 | `--script-timeout=<ms>` | `setScriptTimeout`（影响异步 `eval`） | 30000 |
 | `--no-wait` | `--wait=none --timeout=0` 的简写（精确时序场景） | — |
 

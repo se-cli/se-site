@@ -13,7 +13,7 @@ The se-cli ecosystem follows the Playwright multi-repo pattern. Three independen
 
 ### What is se-mcp?
 
-se-mcp is a thin MCP (Model Context Protocol) server wrapper around se-cli. It exposes 50+ browser automation tools to MCP-aware AI clients like VS Code, Claude Desktop, Cursor, and Claude Code via stdio JSON-RPC 2.0.
+se-mcp is a thin MCP (Model Context Protocol) server wrapper around se-cli. It exposes all 62 browser automation tools to MCP-aware AI clients like VS Code, Claude Desktop, Cursor, and Claude Code via stdio JSON-RPC 2.0.
 
 - Package: `@browsers-cli/se-mcp` on npm
 - Repository: [https://github.com/se-cli/se-mcp](https://github.com/se-cli/se-mcp)
@@ -71,7 +71,7 @@ Add se-mcp to your MCP client configuration. The server name is `se-cli`.
 
 ### Tool Catalog
 
-se-mcp exposes 50+ MCP tools covering the full browser automation lifecycle. All tools are prefixed with `browser_`.
+se-mcp exposes 62 MCP tools covering the full browser automation lifecycle. All tools are prefixed with `browser_`.
 
 | Tool | Description |
 |------|-------------|
@@ -113,7 +113,7 @@ code --install-extension se-cli.se-extension-vscode
 
 ### Features
 
-- **MCP server integration** — se-cli is registered as a Model Context Protocol server via `contributes.mcpServers`, exposing 40+ browser automation tools to VS Code agents.
+- **MCP server integration** — se-cli is registered as a Model Context Protocol server via `contributes.mcpServers`, exposing all 62 browser automation tools to VS Code agents.
 - **Browser panel** — a webview in the activity bar showing the last aria snapshot as a tree, the last screenshot, quick action buttons (Open, Close, Navigate, Snapshot, Screenshot, Click, Fill), and a command history.
 - **Status bar** — live daemon status (running browser / stopped). Click to open a quick pick of all commands.
 - **Auto-snapshot** — optionally take an aria snapshot after every navigation or interaction so the panel always reflects the current page.

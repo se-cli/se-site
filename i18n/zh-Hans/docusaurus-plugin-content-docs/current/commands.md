@@ -19,6 +19,9 @@ se-cli 内置的命令分为多个类别。会话级命令在 CLI 进程中运�
 | `close-all` | 优雅地关闭所有会话 |
 | `kill-all` | 强制终止所有会话 |
 | `logs [--tail=N]` | 查看本会话的 daemon + CLI 日志文件（默认 50 行） |
+| `install [--skills] [--agent=claude,cursor,copilot] [--path=<dir>] [--force] [--list-agents]` | 将 `SKILL.md` 安装到 AI 智能体技能目录（v0.2；多目标 v0.9） |
+| `install-browser [chrome\|edge\|firefox]` | 通过 Selenium Manager 安装/验证浏览器驱动（省略时自动检测）（v0.1） |
+| `mcp-server [--http] [--port=N]` | 启动 MCP 服务器（默认 stdio；`--http` 使用 Streamable HTTP）（v0.9） |
 
 ## 导航（Navigation）
 
@@ -207,7 +210,7 @@ se-cli 内置的命令分为多个类别。会话级命令在 CLI 进程中运�
 | `--retry=<n>` | 失败重试次数，`-1` = 直到超时（v0.4） |
 | `--retry-interval=<ms>` | 重试的轮询间隔（v0.4，默认 100） |
 | `--implicit-wait=<ms>` | 驱动隐式等待（v0.4） |
-| `--page-load-timeout=<ms>` | `driver.manage().timeouts().pageLoadTimeout()`（v0.4） |
+| `--page-load-timeout=<ms>` | `driver.manage().setTimeouts({ pageLoad: <ms> })`（v0.4） |
 | `--script-timeout=<ms>` | 异步 `eval` 的 `setScriptTimeout`（v0.4） |
 | `--no-wait` | `--wait=none --timeout=0` 的简写（v0.4） |
 | `--not` | 反转断言（v0.6） |

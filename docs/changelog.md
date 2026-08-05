@@ -105,7 +105,7 @@ All capabilities via CDP `Emulation.*` / `Network.*` domains, BiDi as a fallback
 
 Exposes se-cli as an MCP Server. Dual-track: CLI+SKILLS (token-efficient for coding agents) and MCP Server (persistent state for autonomous workflows) — both share the same underlying tool implementation. MCP server wrapper published as [`se-mcp`](https://github.com/se-cli/se-mcp).
 
-- `se-cli mcp-server`: 40+ tools over custom JSON-RPC (no SDK dependency); stdio (default) and Streamable HTTP (`--http`, `POST|GET|DELETE /mcp`, `Mcp-Session-Id`).
+- `se-cli mcp-server`: 62 tools over custom JSON-RPC (no SDK dependency); stdio (default) and Streamable HTTP (`--http`, `POST|GET|DELETE /mcp`, `Mcp-Session-Id`).
 - `run-code "async driver => ..."`: execute arbitrary Selenium snippets; returned elements become refs.
 - `generate-locator <ref>`: best locator (`new By('role', …)`/`By.css`) with match counts; role-based codegen via `--locator-style=role|css|ref`.
 - `SKILL.md` frontmatter compliance (`name`, `description`, `license`, `compatibility`) and multi-target `install --skills` (auto-detect, `--agent`, `--path`, `--force`, `--list-agents`).
