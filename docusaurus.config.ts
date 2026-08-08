@@ -28,6 +28,19 @@ const config: Config = {
 
   trailingSlash: false,
 
+  // Cloudflare Web Analytics - privacy-friendly, cookie-free pageview stats.
+  // Injected into <head> on every page (both locales).
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'module',
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        'data-cf-beacon': '{"token": "759f2f4c57ac477389ae6d62f5cafa96"}',
+      },
+    },
+  ],
+
   // Internationalization
   i18n: {
     defaultLocale: 'en',
