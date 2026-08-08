@@ -88,7 +88,7 @@ const config: Config = {
     announcementBar: {
       id: 'version',
       content:
-        'se-cli v0.9.1 · se-mcp v0.2 · se-extension-vscode v0.2 — get started with the <a href="docs/getting-started">Getting Started guide</a>.',
+        'se-cli v0.10.0 · se-mcp v0.2 · se-extension-vscode v0.2 — get started with the <a href="docs/getting-started">Getting Started guide</a>.',
       backgroundColor: '#f0fdf4',
       textColor: '#166534',
     },

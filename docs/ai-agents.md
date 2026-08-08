@@ -80,3 +80,33 @@ npx @browsers-cli/se-mcp
 :::info Dual-track strategy
 CLI + SKILLS stays the token-efficient path for coding agents; the MCP Server adds persistent-state tooling for autonomous workflows. Track progress on the [roadmap](roadmap.md).
 :::
+
+## v0.10: remote, custom browsers & Safari (Shipped)
+
+For agents that need browsers beyond the local Chrome/Edge/Firefox defaults:
+
+```text
+# Attach to a Selenium Grid 4 hub or remote WebDriver
+Agent: "Run the test against the staging Grid"
+  $ se-cli open --browser=chrome --endpoint=http://grid.example.com:4444/wd/hub
+  $ se-cli grid status http://grid.example.com:4444/wd/hub
+  $ se-cli grid distribute --shard=1/4 --browsers=chrome,edge,firefox,safari
+
+# Custom browser/driver binaries (360, UC, Brave, Electron-embedded, ...)
+  $ se-cli open --browser-binary=/opt/custom-browser --driver-binary=/opt/custom-driver
+
+# Real Safari (macOS only — no headless, no BiDi/CDP)
+  $ se-cli open --browser=safari
+
+# W3C capabilities pass-through (e.g. accept self-signed certs)
+  $ se-cli open --capabilities='{"acceptInsecureCerts":true}'
+```
+
+Not every command works on every browser. Navigation, snapshot, interaction,
+cookies, storage, screenshot, eval, tabs and dialogs work on all four;
+`console`/`requests`/`route` need BiDi (Chrome/Edge/Firefox), `device`/
+`emulate`/`--cdp` need CDP (Chrome/Edge), `pdf` needs the W3C print endpoint
+(no Safari). The full matrix lives in the `se-cli` repo docs (`docs/spec.md` →
+Browser Support Matrix). Agents that try an unsupported command get a clear
+error naming the missing capability, so they can fall back to an alternate
+browser automatically.

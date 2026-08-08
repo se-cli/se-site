@@ -80,3 +80,31 @@ npx @browsers-cli/se-mcp
 :::info 双轨策略
 CLI + SKILLS 仍是编码智能体最高效省 token 的路径；MCP 服务器则为自主工作流提供持久化状态的工具。可在[路线图](roadmap.md)中跟踪进度。
 :::
+
+## v0.10：远程、自定义浏览器与 Safari（已发布）
+
+当 agent 需要本地 Chrome/Edge/Firefox 之外的浏览器时：
+
+```text
+# 连接到 Selenium Grid 4 hub 或远程 WebDriver
+Agent: "在 staging Grid 上运行测试"
+  $ se-cli open --browser=chrome --endpoint=http://grid.example.com:4444/wd/hub
+  $ se-cli grid status http://grid.example.com:4444/wd/hub
+  $ se-cli grid distribute --shard=1/4 --browsers=chrome,edge,firefox,safari
+
+# 自定义浏览器/驱动二进制（360、UC、Brave、Electron 内嵌等）
+  $ se-cli open --browser-binary=/opt/custom-browser --driver-binary=/opt/custom-driver
+
+# 真实 Safari（仅 macOS——不支持无头、BiDi/CDP）
+  $ se-cli open --browser=safari
+
+# W3C capabilities 透传（例如接受自签名证书）
+  $ se-cli open --capabilities='{"acceptInsecureCerts":true}'
+```
+
+并非每个命令都支持所有浏览器。导航、snapshot、交互、cookie、存储、截图、
+eval、标签页与对话框在全部四种浏览器上可用；`console`/`requests`/`route`
+需要 BiDi（Chrome/Edge/Firefox），`device`/`emulate`/`--cdp` 需要 CDP
+（Chrome/Edge），`pdf` 需要 W3C 打印端点（不支持 Safari）。完整矩阵见
+`se-cli` 仓库文档（`docs/spec.md` → 浏览器支持矩阵）。当 agent 尝试不支持的
+命令时会收到明确错误（指出缺失的能力），从而自动回退到其他浏览器。

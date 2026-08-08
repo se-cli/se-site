@@ -67,7 +67,7 @@ Selenium MCP loads ~5KB of tool schemas per call and returns full accessibility 
 
 ### Which browsers are supported?
 
-Chrome, Edge, and Firefox are fully supported for both headless and headed modes. Chrome and Edge also support CDP attach via `--cdp=<url>`. Safari (`--browser=safari`) and Edge IE mode (`--browser=edge-ie`) are planned for v0.10.
+Chrome, Edge, and Firefox are fully supported for both headless and headed modes. Chrome and Edge also support CDP attach via `--cdp=<url>`. Safari (`--browser=safari`) is supported on macOS (v0.10); Edge IE mode (`--browser=edge-ie`) remains planned.
 
 ### Do I need to install browser drivers separately?
 

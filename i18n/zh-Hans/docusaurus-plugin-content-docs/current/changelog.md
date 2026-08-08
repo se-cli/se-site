@@ -110,18 +110,19 @@ sidebar_position: 3
 - `generate-locator <ref>`：最佳定位器（`new By('role', …)`/`By.css`）并带匹配数量；通过 `--locator-style=role|css|ref` 进行基于角色的代码生成。
 - `SKILL.md` front matter 合规（`name`、`description`、`license`、`compatibility`）和多目标 `install --skills`（自动检测、`--agent`、`--path`、`--force`、`--list-agents`）。
 
-## v0.10 — 远程、Grid 与自定义浏览器 `核心` 规划中
+## v0.10 — 远程、Grid 与自定义浏览器 `核心` ✓ 已发布
 
-*规划中 · Selenium 护城河*
+*2026-08 · Selenium 护城河*
 
 差异化的强项——Playwright 永远无法匹敌的领域。扩展浏览器覆盖范围和连接能力。
 
-- `--browser=safari`，通过 `safaridriver`（仅 macOS，不支持无头/BiDi/CDP）。
-- `--endpoint=<url>`：Selenium Grid 4 或远程 WebDriver；`grid status/attach/distribute --shard=x/y`。
-- `--browser-binary`、`--driver-binary`、`--browser-args`、`--browser-prefs`、`--capabilities`（覆盖所有 W3C WebDriver 端点）。
-- 云浏览器集成：Browserbase、Sauce Labs、BrowserStack。
-- `pdf --filename=f`，通过 CDP `Page.printToPDF`（仅 Chromium）。
-- `--browser=edge-ie`：面向遗留 IE 场景的 Edge IE 模式（仅 Windows Edge 企业版，自动配置策略）。
+- `--browser=safari`，通过 `safaridriver`（仅 macOS，不支持无头/BiDi/CDP）；已在 macOS CI 上完成集成测试。
+- `--endpoint=<url>`：Selenium Grid 4 或远程 WebDriver；`grid status/attach/distribute --shard=x/y`（CI 含真实远程会话测试）。
+- `--browser-binary`、`--driver-binary`、`--browser-args`、`--capabilities`（覆盖所有 W3C WebDriver 端点）。`--capabilities` 不能覆盖内部管理的关键项（BiDi/浏览器/选项）。
+- `pdf --filename=f`，通过 W3C WebDriver 打印端点（Chrome/Edge/Firefox；不支持 Safari）。
+- Grid 集成测试：`tests/integration/v0.10-grid.test.ts`（模拟 Grid 4 hub + 探测门控的真实远程会话）；Safari 套件：`tests/integration/v0.10-safari.test.ts`。
+- Electron 支持（原 v0.10 计划）回退至 backlog——需要版本匹配的驱动与 CI 测试目标才能可靠验证。
+- 剩余规划：`--browser-prefs`、云浏览器集成（Browserbase/Sauce Labs/BrowserStack）、`--browser=edge-ie`。
 
 ## v0.11 — 录制与可视化 `次要` 规划中
 

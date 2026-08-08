@@ -45,7 +45,7 @@ To avoid misplaced community expectations, se-cli declares what it will never im
 
 ## Version Timeline
 
-v0.1–v0.9 are shipped. v0.10–v0.13 are planned, sequenced by dependency and value.
+v0.1–v0.10 are shipped. v0.11–v0.13 are planned, sequenced by dependency and value.
 
 ### v0.1 — MVP Architecture `Must-Have` ✓ shipped
 
@@ -83,9 +83,11 @@ Device presets (`device "iPhone 13"`), geolocation/timezone/locale/color-scheme/
 
 Dual-track: CLI+SKILLS for coding agents, MCP Server for autonomous workflows — sharing the same tool implementation. MCP server lives in core (stdio + Streamable HTTP), with a separate [`se-mcp`](https://github.com/se-cli/se-mcp) wrapper package. Adds `run-code`, `generate-locator`, `By.role()` codegen, spec-compliant SKILL.md frontmatter, and multi-target `install --skills`.
 
-### v0.10 — Remote, Grid & Custom Browsers `Core` planned
+### v0.10 — Remote, Grid & Custom Browsers `Core` ✓ shipped
 
-The Selenium moat. Real Safari via `safaridriver`, Selenium Grid 4 (`--endpoint`), custom browser/driver binaries, `--browser=electron` with `--app-binary` for Electron app testing, cloud browsers (Browserbase/Sauce/BrowserStack), Grid sharding, `pdf` export, and Edge IE mode for legacy scenarios.
+The Selenium moat. Real Safari via `safaridriver` (macOS), Selenium Grid 4 (`--endpoint`, `grid status/attach/distribute --shard`), custom browser/driver binaries (`--browser-binary`, `--driver-binary`, `--browser-args`, `--capabilities`), and `pdf` export via the W3C print endpoint. Coverage: `v0.10-safari.test.ts` (macOS CI) + `v0.10-grid.test.ts` (mock hub + real remote sessions).
+
+Remaining in backlog: Electron (`--browser=electron --app-binary`, reverted — needs a version-matched driver + CI target), cloud browsers (Browserbase/Sauce/BrowserStack), `--browser-prefs`, Edge IE mode (`--browser=edge-ie`).
 
 ### v0.11 — Recording & Visualization `Marginal` planned
 

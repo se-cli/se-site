@@ -110,18 +110,19 @@ Exposes se-cli as an MCP Server. Dual-track: CLI+SKILLS (token-efficient for cod
 - `generate-locator <ref>`: best locator (`new By('role', …)`/`By.css`) with match counts; role-based codegen via `--locator-style=role|css|ref`.
 - `SKILL.md` frontmatter compliance (`name`, `description`, `license`, `compatibility`) and multi-target `install --skills` (auto-detect, `--agent`, `--path`, `--force`, `--list-agents`).
 
-## v0.10 — Remote, Grid & Custom Browsers `Core` planned
+## v0.10 — Remote, Grid & Custom Browsers `Core` ✓ shipped
 
-*planned · the Selenium moat*
+*2026-08 · the Selenium moat*
 
 The differentiated stronghold — the area Playwright will never match. Extends browser coverage and connection capabilities.
 
-- `--browser=safari` via `safaridriver` (macOS only, no headless/BiDi/CDP).
-- `--endpoint=<url>`: Selenium Grid 4 or remote WebDriver; `grid status/attach/distribute --shard=x/y`.
-- `--browser-binary`, `--driver-binary`, `--browser-args`, `--browser-prefs`, `--capabilities` (cover all W3C WebDriver endpoints).
-- Cloud browser integration: Browserbase, Sauce Labs, BrowserStack.
-- `pdf --filename=f` via CDP `Page.printToPDF` (Chromium only).
-- `--browser=edge-ie`: Edge IE mode for legacy IE scenarios (Windows Edge Enterprise only, auto-configures policy).
+- `--browser=safari` via `safaridriver` (macOS only, no headless/BiDi/CDP); integration-tested on macOS CI.
+- `--endpoint=<url>`: Selenium Grid 4 or remote WebDriver; `grid status/attach/distribute --shard=x/y` (real remote-session tests in CI).
+- `--browser-binary`, `--driver-binary`, `--browser-args`, `--capabilities` (cover all W3C WebDriver endpoints). `--capabilities` cannot override internally managed keys (BiDi/browser/options).
+- `pdf --filename=f` via the W3C WebDriver print endpoint (Chrome/Edge/Firefox; not Safari).
+- Grid integration tests: `tests/integration/v0.10-grid.test.ts` (mock Grid 4 hub + probe-gated real remote sessions); Safari suite: `tests/integration/v0.10-safari.test.ts`.
+- Electron support (was v0.10) reverted to backlog — needs a version-matched driver + test target in CI to verify reliably.
+- Remaining planned: `--browser-prefs`, cloud browser integration (Browserbase/Sauce Labs/BrowserStack), `--browser=edge-ie`.
 
 ## v0.11 — Recording & Visualization `Marginal` planned
 

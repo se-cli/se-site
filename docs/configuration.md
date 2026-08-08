@@ -127,7 +127,7 @@ When browsers are installed in non-default locations, use these variables to hel
 
 ### 🔗 Remote WebDriver & Grid Variables
 
-For connecting to Selenium Grid or cloud providers (BrowserStack, Sauce Labs, etc.). se-cli's `--endpoint` flag for Grid attach is on the v0.10 roadmap.
+For connecting to Selenium Grid or cloud providers (BrowserStack, Sauce Labs, etc.). se-cli's `--endpoint` flag attaches to a Selenium Grid 4 hub or remote WebDriver (v0.10).
 
 | Variable | Description | Example |
 |----------|-------------|---------|
@@ -138,7 +138,7 @@ For connecting to Selenium Grid or cloud providers (BrowserStack, Sauce Labs, et
 | `SE_NODE_MAX_SESSIONS` | Max concurrent sessions per node (default: 1) | 4 |
 | `SE_NODE_SESSION_TIMEOUT` | Session idle timeout in seconds (default: 300) | 600 |
 
-> **Note:** se-cli currently manages local browsers only. Remote Grid attach (`--endpoint`) is planned for v0.10. The variables above are recognized by the underlying `selenium-webdriver` library when configuring remote connections manually.
+> **Note:** se-cli attaches to remote Grid/WebDriver via `--endpoint` (v0.10). The variables above are also recognized by the underlying `selenium-webdriver` library when configuring remote connections manually.
 
 ### 🐳 Docker & CI Tips
 
